@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight } from "@material-ui/icons";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -7,7 +7,7 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   position: relative;
-  background-color: coral;
+  overflow: hidden;
 `;
 
 const Arrow = styled.div`
@@ -26,10 +26,13 @@ const Arrow = styled.div`
   margin: auto;
   cursor: pointer;
   opacity: 0.5;
+  z-index: 2;
 `;
 
 const Wrapper = styled.div`
   height: 100%;
+  display: flex;
+  transform: translateX(0vw);
 `;
 
 const Slide = styled.div`
@@ -37,6 +40,7 @@ const Slide = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
+  background-color: ${props => props.bg};
 `;
 
 const ImgContainer = styled.div`
@@ -45,7 +49,8 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-    height: 80%;
+  height: 80%;
+  margin-left: 150px;
 `;
 
 const InfoContainer = styled.div`
@@ -53,28 +58,74 @@ const InfoContainer = styled.div`
   padding: 50px;
 `;
 
-const Title = styled.h1``
-const Description = styled.p``
-const Button = styled.button``
+const Title = styled.h1`
+    font-size: 70px;
+`;
+const Desc = styled.p`
+    margin: 50px 0px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+`;
+const Button = styled.button`
+    padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+`;
 
 const Slider = () => {
+    const [slideIndex, setSlideIndfex] = useState(0)
+
+    const handleClick = (direction) => {
+
+    }
+
+
   return (
     <Container>
-      <Arrow direction="left">
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeft />
       </Arrow>
       <Wrapper>
-        <Slide></Slide>
-        <ImgContainer>
-          <Image src="" />
-        </ImgContainer>
-        <InfoContainer>
-            <Title></Title>
-            <Description></Description>
-            <Button></Button>
-        </InfoContainer>
+        <Slide bg="f5fafd">
+          <ImgContainer>
+            <Image src="https://i.ibb.co/s3xjxFz/kisspng-woman-female-portable-network-graphics-clip-art-fa-zenle-seilmi-png-bayan-resimleri-womens-5.png" />
+          </ImgContainer>
+          <InfoContainer>
+            <Title>MODA VERÃO</Title>
+            <Desc>
+              NÃO PERCA O ESTILO! GARANTA 30% DE DESCONTO NA NOVA COLEÇÃO.
+            </Desc>
+            <Button>VER AGORA</Button>
+          </InfoContainer>
+        </Slide>
+        <Slide bg="fcf1ed">
+          <ImgContainer>
+            <Image src="https://i.ibb.co/s3xjxFz/kisspng-woman-female-portable-network-graphics-clip-art-fa-zenle-seilmi-png-bayan-resimleri-womens-5.png" />
+          </ImgContainer>
+          <InfoContainer>
+            <Title>SUCESSO DE VENDAS</Title>
+            <Desc>
+              NÃO PERCA O ESTILO! GARANTA 30% DE DESCONTO NA NOVA COLEÇÃO.
+            </Desc>
+            <Button>VER AGORA</Button>
+          </InfoContainer>
+        </Slide>
+        <Slide bg="fbf0f4">
+          <ImgContainer>
+            <Image src="https://i.ibb.co/s3xjxFz/kisspng-woman-female-portable-network-graphics-clip-art-fa-zenle-seilmi-png-bayan-resimleri-womens-5.png" />
+          </ImgContainer>
+          <InfoContainer>
+            <Title>SUCESSO DE VENDAS</Title>
+            <Desc>
+              NÃO PERCA O ESTILO! GARANTA 30% DE DESCONTO NA NOVA COLEÇÃO.
+            </Desc>
+            <Button>VER AGORA</Button>
+          </InfoContainer>
+        </Slide>
       </Wrapper>
-      <Arrow direction="right">
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRight />
       </Arrow>
     </Container>
