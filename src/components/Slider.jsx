@@ -42,7 +42,7 @@ const Slide = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: ${props => props.bg};
+  background-color: ${(props) => props.bg};
 `;
 
 const ImgContainer = styled.div`
@@ -61,28 +61,25 @@ const InfoContainer = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 70px;
+  font-size: 70px;
 `;
 const Desc = styled.p`
-    margin: 50px 0px;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 3px;
+  margin: 50px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
 `;
 const Button = styled.button`
-    padding: 10px;
-    font-size: 20px;
-    background-color: transparent;
-    cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
 `;
 
 const Slider = () => {
-    const [slideIndex, setSlideIndfex] = useState(0)
+  const [slideIndex, setSlideIndfex] = useState(0);
 
-    const handleClick = (direction) => {
-
-    }
-
+  const handleClick = (direction) => {};
 
   return (
     <Container>
@@ -90,42 +87,20 @@ const Slider = () => {
         <ArrowLeft />
       </Arrow>
       <Wrapper>
-        <Slide bg="f5fafd">
-          <ImgContainer>
-            <Image src="https://i.ibb.co/s3xjxFz/kisspng-woman-female-portable-network-graphics-clip-art-fa-zenle-seilmi-png-bayan-resimleri-womens-5.png" />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>MODA VERÃO</Title>
-            <Desc>
-              NÃO PERCA O ESTILO! GARANTA 30% DE DESCONTO NA NOVA COLEÇÃO.
-            </Desc>
-            <Button>VER AGORA</Button>
-          </InfoContainer>
-        </Slide>
-        <Slide bg="fcf1ed">
-          <ImgContainer>
-            <Image src="https://i.ibb.co/s3xjxFz/kisspng-woman-female-portable-network-graphics-clip-art-fa-zenle-seilmi-png-bayan-resimleri-womens-5.png" />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>SUCESSO DE VENDAS</Title>
-            <Desc>
-              NÃO PERCA O ESTILO! GARANTA 30% DE DESCONTO NA NOVA COLEÇÃO.
-            </Desc>
-            <Button>VER AGORA</Button>
-          </InfoContainer>
-        </Slide>
-        <Slide bg="fbf0f4">
-          <ImgContainer>
-            <Image src="https://i.ibb.co/s3xjxFz/kisspng-woman-female-portable-network-graphics-clip-art-fa-zenle-seilmi-png-bayan-resimleri-womens-5.png" />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>SUCESSO DE VENDAS</Title>
-            <Desc>
-              NÃO PERCA O ESTILO! GARANTA 30% DE DESCONTO NA NOVA COLEÇÃO.
-            </Desc>
-            <Button>VER AGORA</Button>
-          </InfoContainer>
-        </Slide>
+        {sliderItems.map((item) => (
+          <Slide bg={item.bg}>
+            <ImgContainer>
+              <Image src={item.img} />
+            </ImgContainer>
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Desc>
+                {item.desc}
+              </Desc>
+              <Button>VER AGORA</Button>
+            </InfoContainer>
+          </Slide>
+        ))}
       </Wrapper>
       <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRight />
