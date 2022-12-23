@@ -21,3 +21,21 @@ export const sliderItems = [
     bg: "fbf0f4",
   },
 ];
+
+export const categories = [
+  {
+    id: 1,
+    img: "",
+    title: "Camisetas"
+  },
+  {
+    id: 2,
+    img: "",
+    title: "Moletom"
+  },
+  {
+    id: 3,
+    img: "",
+    title: "Calcas"
+  },
+]
