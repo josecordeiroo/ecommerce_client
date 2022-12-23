@@ -25,17 +25,17 @@ export const sliderItems = [
 export const categories = [
   {
     id: 1,
-    img: "",
+    img: "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg",
     title: "Camisetas"
   },
   {
     id: 2,
-    img: "",
+    img: "https://images.pexels.com/photos/12151056/pexels-photo-12151056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Moletom"
   },
   {
     id: 3,
-    img: "",
+    img: "https://images.pexels.com/photos/1027160/pexels-photo-1027160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Calcas"
   },
 ]
