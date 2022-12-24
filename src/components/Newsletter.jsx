@@ -45,7 +45,7 @@ function Newsletter() {
   return (
     <Container>
         <Title>Novidades</Title>
-        <Desc>Fique por dentro dos lançamentos e promoções!</Desc>
+        <Desc>Fique por dentro dos lançamentos e promoções</Desc>
         <InputContainer>
             <Input placeholder='Seu e-mail'/>
             <Button>

@@ -1,7 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Facebook, Instagram, Pinterest, Twitter } from "@material-ui/icons";
+import {
+  Facebook,
+  Instagram,
+  MailOutline,
+  Phone,
+  Pinterest,
+  Room,
+  Twitter,
+} from "@material-ui/icons";
 
 const Container = styled.div`
   display: flex;
@@ -18,15 +26,21 @@ const Center = styled.div`
   padding: 20px;
 `;
 
-const Title = styled.h3``;
+const Title = styled.h3`
+  margin-bottom: 30px;
+`;
 
-const List = styled.ul``;
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+`;
 
-const ListItem = styled.li``;
-
-const Right = styled.div`
-  flex: 1;
-  padding: 20px;
+const ListItem = styled.li`
+  width: 50%;
+  margin-bottom: 10px;
 `;
 
 const Logo = styled.h1``;
@@ -50,6 +64,21 @@ const SocialIcon = styled.div`
   justify-content: center;
   margin-right: 20px;
 `;
+
+const Right = styled.div`
+  flex: 1;
+  padding: 20px;
+`;
+
+const ContactItem = styled.div`
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+`
+
+const Payment = styled.img`
+    width: 40%;
+`
 
 const Footer = () => {
   return (
@@ -89,7 +118,22 @@ const Footer = () => {
           <ListItem>Termos de Uso</ListItem>
         </List>
       </Center>
-      <Right></Right>
+      <Right>
+        <Title>Contato</Title>
+        <ContactItem>
+          <Room style={{marginRight: "10px"}} />
+          Rua Miguel Sutil, 288, Itaim Bibi, São Paulo/SP
+        </ContactItem>
+        <ContactItem>
+          <Phone style={{marginRight: "10px"}} />
+          11 5542-8455
+        </ContactItem>
+        <ContactItem>
+          <MailOutline style={{marginRight: "10px"}} />
+          contato@zkclothing.com.br
+        </ContactItem>
+        <Payment style={{marginRight: "10px"}} src="https://i.ibb.co/Qfvn4z6/payment.png"/>
+      </Right>
     </Container>
   );
 };
