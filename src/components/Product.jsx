@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons'
+
 const Container = styled.div``
 
 export const Product = ({item}) => {
@@ -10,7 +12,13 @@ export const Product = ({item}) => {
         <Image src={item.img} />
         <Info>
             <Icon>
-                
+                <ShoppingCartOutlined/>
+            </Icon>
+            <Icon>
+                <SearchOutlined/>
+            </Icon>
+            <Icon>
+                <FavoriteBorderOutlined/>
             </Icon>
         </Info>
     </Container>
