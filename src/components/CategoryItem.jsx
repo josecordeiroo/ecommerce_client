@@ -33,6 +33,7 @@ const Button = styled.button`
     background-color: white;
     color: gray;
     cursor: pointer;
+    font-weight: 600;
 `;
 
 const CategoryItem = ({ item }) => {
@@ -41,7 +42,7 @@ const CategoryItem = ({ item }) => {
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button>Compre agora</Button>
+        <Button>VEJA AGORA</Button>
       </Info>
     </Container>
   );
