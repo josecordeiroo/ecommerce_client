@@ -27,13 +27,9 @@ const FilterText = styled.span`
   font-weight: 600;
 `;
 
-const Select = styled.select`
+const Select = styled.select``;
 
-`
-
-const Option = styled.option`
-
-`
+const Option = styled.option``;
 
 const ProductList = () => {
   return (
@@ -46,7 +42,7 @@ const ProductList = () => {
           <FilterText>Filtrar produtos:</FilterText>
           <Select>
             <Option disabled selected>
-                Cor
+              Cor
             </Option>
             <Option>Branco</Option>
             <Option>Preto</Option>
@@ -54,6 +50,17 @@ const ProductList = () => {
             <Option>Azul</Option>
             <Option>Amarelo</Option>
             <Option>Verde</Option>
+          </Select>
+          <Select>
+            <Option disabled selected>
+              Tamanho
+            </Option>
+            <Option>PP</Option>
+            <Option>P</Option>
+            <Option>M</Option>
+            <Option>G</Option>
+            <Option>GG</Option>
+            <Option>XXL</Option>
           </Select>
         </Filter>
         <Filter>
