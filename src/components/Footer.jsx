@@ -86,7 +86,7 @@ const Footer = () => {
       <Left>
         <Logo>ZKCLOTHING.</Logo>
         <Desc>
-          Nós somos uma marca alternativa com identidade, originalidade e
+          Uma marca alternativa com identidade, originalidade e
           qualidade, com referência no hardcore nacional, no universo da tattoo
           e lifestyle de atitude.
         </Desc>
