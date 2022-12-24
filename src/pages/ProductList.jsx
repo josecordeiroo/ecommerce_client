@@ -65,6 +65,13 @@ const ProductList = () => {
         </Filter>
         <Filter>
           <FilterText>Classificar produtos:</FilterText>
+          <Select>
+            <Option selected>
+              Mais relevantes
+            </Option>
+            <Option>Preço (maior para o menor)</Option>
+            <Option>Preço (menor para o maior)</Option>
+          </Select>
         </Filter>
       </FilterContainer>
       <Products />
