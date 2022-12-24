@@ -1,23 +1,23 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://i.ibb.co/s3xjxFz/kisspng-woman-female-portable-network-graphics-clip-art-fa-zenle-seilmi-png-bayan-resimleri-womens-5.png",
-    title: "MODA VERÃO",
-    desc: "NAO PERCA A OPORTUNIDADE",
+    img: "https://images.pexels.com/photos/1818431/pexels-photo-1818431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "NOVA COLEÇÃO DE INVERNO",
+    desc: "ESQUENTE-SE SEM PERDER O ESTILO",
     bg: "f5fafd",
   },
   {
     id: 2,
-    img: "https://i.ibb.co/s3xjxFz/kisspng-woman-female-portable-network-graphics-clip-art-fa-zenle-seilmi-png-bayan-resimleri-womens-5.png",
-    title: "MODA INVERNO",
-    desc: "PRECOS ESPECIAIS",
+    img: "https://images.pexels.com/photos/8350410/pexels-photo-8350410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "VERÃO",
+    desc: "PREÇOS PARA QUEIMAR O ESTOQUE",
     bg: "fcf1ed",
   },
   {
     id: 3,
-    img: "https://i.ibb.co/s3xjxFz/kisspng-woman-female-portable-network-graphics-clip-art-fa-zenle-seilmi-png-bayan-resimleri-womens-5.png",
-    title: "MODA OUTONO",
-    desc: "COISAS COLORIDAS PRA VOCE",
+    img: "https://images.pexels.com/photos/14732397/pexels-photo-14732397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "OUTONO",
+    desc: "COISAS COLORIDAS PRA VOCÊ",
     bg: "fbf0f4",
   },
 ];
@@ -35,7 +35,7 @@ export const categories = [
   },
   {
     id: 3,
-    img: "https://images.pexels.com/photos/1027160/pexels-photo-1027160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img: "https://images.pexels.com/photos/12407943/pexels-photo-12407943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "CALÇA"
   },
 ]

@@ -54,6 +54,7 @@ const ImgContainer = styled.div`
 const Image = styled.img`
   height: 80%;
   margin-left: 150px;
+  margin-top: 50px;
 `;
 
 const InfoContainer = styled.div`
@@ -96,7 +97,7 @@ const Slider = () => {
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
-          <Slide bg={item.bg}>
+          <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
               <Image src={item.img} />
             </ImgContainer>
@@ -105,7 +106,7 @@ const Slider = () => {
               <Desc>
                 {item.desc}
               </Desc>
-              <Button>VER AGORA</Button>
+              <Button>VEJA AGORA</Button>
             </InfoContainer>
           </Slide>
         ))}
