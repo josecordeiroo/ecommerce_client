@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import Announcement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
+import { Filter } from "@material-ui/icons";
 
 const Container = styled.div``;
 
@@ -22,18 +23,18 @@ const Image = styled.img`
   object-fit: cover;
 `;
 const InfoContainer = styled.div`
-    flex: 1;
-    padding: 0px 50px;
+  flex: 1;
+  padding: 0px 50px;
 `;
 const Title = styled.h1`
-    font-weight: 200;
+  font-weight: 200;
 `;
 const Desc = styled.p`
-    margin: 20px 0px;
+  margin: 20px 0px;
 `;
 const Price = styled.span`
-    font-weight: 100;
-    font-size: 40px;
+  font-weight: 100;
+  font-size: 40px;
 `;
 
 const Product = () => {
@@ -55,6 +56,25 @@ const Product = () => {
             100% Algodão, fio 30.1 penteada. Cor predominante: Preto.
           </Desc>
           <Price>R$ 99.90</Price>
+          <FilterContainer>
+            <Filter>
+              <FilterTitle>Cor</FilterTitle>
+              <FilterColor color="black" />
+              <FilterColor color="darkblue" />
+              <FilterColor color="gray" />
+            </Filter>
+            <Filter>
+              <FilterTitle>Tamanho</FilterTitle>
+              <FilterSize>
+                <FilterSizeOption>PP</FilterSizeOption>
+                <FilterSizeOption>P</FilterSizeOption>
+                <FilterSizeOption>M</FilterSizeOption>
+                <FilterSizeOption>G</FilterSizeOption>
+                <FilterSizeOption>GG</FilterSizeOption>
+                <FilterSizeOption>XGG</FilterSizeOption>
+              </FilterSize>
+            </Filter>
+          </FilterContainer>
         </InfoContainer>
       </Wrapper>
       <Newsletter />
