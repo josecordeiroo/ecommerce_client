@@ -3,10 +3,10 @@ import styled from 'styled-components'
 
 const Container = styled.div``
 
-const Register = () => {
+const Login = () => {
   return (
     <Container></Container>
   )
 }
 
-export default Register
+export default Login
