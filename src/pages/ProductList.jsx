@@ -1,5 +1,7 @@
 import React from "react";
+
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 import NavBar from "../components/NavBar";
 import Announcement from "../components/Announcement";
@@ -20,17 +22,20 @@ const FilterContainer = styled.div`
 
 const Filter = styled.div`
   margin: 20px;
+  ${mobile({ width: "0px 20px", display: "flex", flexDirection: "column" })}
 `;
 
 const FilterText = styled.span`
   font-size: 20px;
   font-weight: 600;
   margin-right: 20px;
+  ${mobile({ marginRight: "0px" })}
 `;
 
 const Select = styled.select`
-    padding: 10px;
-    margin-right: 20px;
+  padding: 10px;
+  margin-right: 20px;
+  ${mobile({ margin: "10px 0px" })}
 `;
 
 const Option = styled.option``;
@@ -72,8 +77,8 @@ const ProductList = () => {
           <Select>
             <Option selected>Mais relevantes</Option>
             <Option>Lançamentos</Option>
-            <Option>Preço (maior para o menor)</Option>
-            <Option>Preço (menor para o maior)</Option>
+            <Option>Preço (Maior)</Option>
+            <Option>Preço (Menor)</Option>
           </Select>
         </Filter>
       </FilterContainer>
