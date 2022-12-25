@@ -10,9 +10,15 @@ const Container = styled.div`
     ),
     url("https://images.pexels.com/photos/1819482/pexels-photo-1819482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
     center;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  
+`;
 
 const Title = styled.h1``;
 
