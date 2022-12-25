@@ -10,7 +10,7 @@ const Container = styled.div`
     ),
     url("https://images.pexels.com/photos/1819482/pexels-photo-1819482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
       center;
-
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,9 +29,9 @@ const Title = styled.h1`
 `;
 
 const Form = styled.form`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Input = styled.input`

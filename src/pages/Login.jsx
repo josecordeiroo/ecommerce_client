@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
   width: 100vw;
@@ -8,16 +8,16 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.pexels.com/photos/1819482/pexels-photo-1819482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+    url("https://images.pexels.com/photos/6310980/pexels-photo-6310980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
       center;
-
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const Wrapper = styled.div`
-  width: 40%;
+  width: 25%;
   padding: 20px;
   background-color: white;
 `;
@@ -29,15 +29,14 @@ const Title = styled.h1`
 `;
 
 const Form = styled.form`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Input = styled.input`
   flex: 1;
   min-width: 40%;
-  margin: 20px 10px 0 0;
+  margin: 10px 0px;
   padding: 10px;
 `;
 
@@ -48,9 +47,22 @@ const Button = styled.button`
   background-color: teal;
   color: white;
   cursor: pointer;
+  margin: 10px 0px;
 `;
 
-const Link = styled.p``
+const Link = styled.a`
+  margin: 5px 0px;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+`;
+
+const Footer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Login = () => {
   return (
@@ -59,13 +71,16 @@ const Login = () => {
         <Title>Acessar sua conta</Title>
         <Form>
           <Input placeholder="Nome de usuário" />
-          <Input placeholder="Senha" />          
-          <Button>Entrar</Button>
-          <Link>Não lembra sua senha?</Link>
+          <Input placeholder="Senha" />
+          <Footer>
+            <Button>Entrar</Button>
+            <Link>Não lembra sua senha?</Link>
+            <Link>Criar nova conta</Link>
+          </Footer>
         </Form>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
