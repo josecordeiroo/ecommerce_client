@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight } from "@material-ui/icons";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 import { sliderItems } from "../data";
 
@@ -10,6 +11,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({})}
 `;
 
 const Arrow = styled.div`
@@ -35,7 +37,7 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
-  transform: translateX(${props => props.slideIndex * -100}vw);
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -83,11 +85,10 @@ const Slider = () => {
 
   const handleClick = (direction) => {
     if (direction === "left") {
-      setSlideIndfex(slideIndex > 0 ? slideIndex - 1 : 2)
+      setSlideIndfex(slideIndex > 0 ? slideIndex - 1 : 2);
     } else {
-      setSlideIndfex(slideIndex < 2 ? slideIndex + 1 : 0)
+      setSlideIndfex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
-
   };
 
   return (
@@ -103,9 +104,7 @@ const Slider = () => {
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
-              <Desc>
-                {item.desc}
-              </Desc>
+              <Desc>{item.desc}</Desc>
               <Button>VEJA AGORA</Button>
             </InfoContainer>
           </Slide>
