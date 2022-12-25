@@ -1,12 +1,21 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-const Container = styled.div``
+import NavBar from "../components/NavBar";
+import Announcement from "../components/Announcement";
+import Footer from "../components/Footer";
+
+const Container = styled.div``;
 
 const Cart = () => {
   return (
-    <Container>Hellow</Container>
-  )
-}
+    <Container>
+      <NavBar />
+      <Announcement />
+      cart
+      <Footer />
+    </Container>
+  );
+};
 
-export default Cart
+export default Cart;
