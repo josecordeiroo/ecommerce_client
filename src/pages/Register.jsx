@@ -25,11 +25,13 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-size: 24px;
   font-weight: 300;
+  text-align: center;
 `;
 
 const Form = styled.form`
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 `;
 
 const Input = styled.input`
@@ -67,7 +69,7 @@ const Register = () => {
           <Input placeholder="Confirme sua senha" />
           <Agreement>
             Para criar uma conta, eu aceito ceder meus dados de navegação como
-            consentido no <b>TERMOS DE USO</b>
+            consentido nos <b>TERMOS DE USO</b>.
           </Agreement>
           <Button>Criar conta agora</Button>
         </Form>
