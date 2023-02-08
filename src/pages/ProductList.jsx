@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 import styled from "styled-components";
 import { mobile } from "../responsive";
@@ -44,21 +44,20 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
+  const location = useLocation();
+  const category = location.pathname.split("/")[2];
+  const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState("newest");
 
-const location = useLocation()
-const category = location.pathname.split("/")[2]
-const [filter, setFilters] = useState({})
-const [sort, setSort] = useState("newest")
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    setFilters({
+      ...filters,
+      [e.target.name]: value,
+    });
+  };
 
-const handleFilters = (e) => {
-  const value = e.target.value
-  setFilters({
-    ...filter,
-    [e.target.name]: value
-  })
-}
-
-console.log(filter)
+  console.log(filter);
 
   return (
     <Container>
@@ -69,9 +68,7 @@ console.log(filter)
         <Filter>
           <FilterText>Filtrar produtos:</FilterText>
           <Select name="Cor" onChange={handleFilters}>
-            <Option disabled selected>
-              Cor
-            </Option>
+            <Option defaultValue>Cor</Option>
             <Option>Branco</Option>
             <Option>Preto</Option>
             <Option>Vermelho</Option>
@@ -80,9 +77,7 @@ console.log(filter)
             <Option>Verde</Option>
           </Select>
           <Select name="Tamanho" onChange={handleFilters}>
-            <Option disabled selected>
-              Tamanho
-            </Option>
+            <Option defaultValue>Tamanho</Option>
             <Option>PP</Option>
             <Option>P</Option>
             <Option>M</Option>
@@ -93,15 +88,14 @@ console.log(filter)
         </Filter>
         <Filter>
           <FilterText>Classificar produtos:</FilterText>
-          <Select>
-            <Option selected>Mais relevantes</Option>
-            <Option>Lançamentos</Option>
-            <Option>Preço (Maior)</Option>
-            <Option>Preço (Menor)</Option>
+          <Select onChange={(e) => setSort(e.target.value)}>
+            <Option value="newest" defaultValue>Lançamentos</Option>
+            <Option value="asc">Preço (Maior)</Option>
+            <Option value="desc">Preço (Menor)</Option>
           </Select>
         </Filter>
       </FilterContainer>
-      <Products />
+      <Products category={category} filters={filters} sort={sort}/>
       <Newsletter />
       <Footer />
     </Container>
