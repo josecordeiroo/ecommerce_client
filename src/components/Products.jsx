@@ -20,12 +20,27 @@ export const Products = ({ category, filters, sort }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/products");
-        console.log(res);
+        const res = await axios.get(
+          category
+            ? `http://localhost:5000/api/products?category=${category}`
+            : "http://localhost:5000/api/products"
+        );
+        setProducts(res.data);
       } catch (err) {}
     };
-    getProducts()
+    getProducts();
   }, [category]);
+
+  useEffect(() => {
+    category &&
+      setFilteredProducts(
+        products.filter((item) =>
+          Object.entries(filters).every(([key, value]) =>
+            item[key].includes(value)
+          )
+        )
+      );
+  }, [products, category, filters]);
 
   return (
     <Container>
