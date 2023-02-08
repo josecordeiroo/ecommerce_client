@@ -1,4 +1,7 @@
 import React from "react";
+import { useState } from "react";
+
+import { useLocation } from 'react-router-dom';
 
 import styled from "styled-components";
 import { mobile } from "../responsive";
@@ -41,6 +44,22 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
+
+const location = useLocation()
+const category = location.pathname.split("/")[2]
+const [filter, setFilters] = useState({})
+const [sort, setSort] = useState("newest")
+
+const handleFilters = (e) => {
+  const value = e.target.value
+  setFilters({
+    ...filter,
+    [e.target.name]: value
+  })
+}
+
+console.log(filter)
+
   return (
     <Container>
       <Announcement />
@@ -49,7 +68,7 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filtrar produtos:</FilterText>
-          <Select>
+          <Select name="Cor" onChange={handleFilters}>
             <Option disabled selected>
               Cor
             </Option>
@@ -60,7 +79,7 @@ const ProductList = () => {
             <Option>Amarelo</Option>
             <Option>Verde</Option>
           </Select>
-          <Select>
+          <Select name="Tamanho" onChange={handleFilters}>
             <Option disabled selected>
               Tamanho
             </Option>
