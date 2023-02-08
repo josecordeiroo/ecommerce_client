@@ -26,17 +26,20 @@ export const categories = [
   {
     id: 1,
     img: "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg",
-    title: "CAMISETA"
+    title: "CAMISETA",
+    categorie: "camisetas"
   },
   {
     id: 2,
     img: "https://images.pexels.com/photos/12151056/pexels-photo-12151056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "MOLETOM"
+    title: "MOLETOM",
+    categorie: "moletons"
   },
   {
     id: 3,
     img: "https://images.pexels.com/photos/12407943/pexels-photo-12407943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "CALÇA"
+    title: "CALÇA",
+    categorie: "calcas"
   },
 ]
 

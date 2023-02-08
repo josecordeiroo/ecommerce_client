@@ -28,7 +28,10 @@ const App = () => {
             path="/entrar"
             element={user ? <Navigate to="/" replace /> : <Login />}
           />
-          <Route path="/cadastrar" element={<Register />} />
+          <Route
+            path="/cadastrar"
+            element={user ? <Navigate to="/" replace /> : <Register />}
+          />
         </Routes>
       </Router>
     </>
