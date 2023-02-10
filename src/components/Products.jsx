@@ -44,9 +44,9 @@ export const Products = ({ category, filters, sort }) => {
 
   return (
     <Container>
-      {category
-        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
-        : products.map((item) => <Product item={item} key={item.id} />)}
+      {filteredProducts.map((item) => (
+        <Product item={item} key={item.id} />
+      ))}
     </Container>
   );
 };
