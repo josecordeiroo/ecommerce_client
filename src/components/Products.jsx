@@ -12,6 +12,7 @@ const Container = styled.div`
 `;
 
 //test
+//test2
 
 export const Products = ({ category, filters, sort }) => {
   const [products, setProducts] = useState([]);
