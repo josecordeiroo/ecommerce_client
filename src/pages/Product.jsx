@@ -124,7 +124,9 @@ const Product = () => {
   const productId = location.pathname.split("/")[2];
 
   const [product, setProduct] = useState({});
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
 
   useEffect(() => {
     const getProduct = async () => {
@@ -153,11 +155,13 @@ const Product = () => {
               <FilterTitle>Cor</FilterTitle>
               {product &&
                 product.color &&
-                product.color.map((c) => <FilterColor color={c} key={c} />)}
+                product.color.map((c) => (
+                  <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+                ))}
             </Filter>
             <Filter>
               <FilterTitle>Tamanho</FilterTitle>
-              <FilterSize>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product &&
                   product.size &&
                   product.size.map((s) => (
@@ -168,7 +172,9 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)} />
+              <Remove
+                onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}
+              />
               <Amount>{quantity}</Amount>
               <Add onClick={() => setQuantity(quantity + 1)} />
             </AmountContainer>
