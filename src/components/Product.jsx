@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-
-import { useLocation } from "react-router-dom";
 
 import {
   FavoriteBorderOutlined,
@@ -9,7 +7,6 @@ import {
   ShoppingCartOutlined,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 const Info = styled.div`
   opacity: 0;
@@ -75,21 +72,6 @@ const Icon = styled.div`
 `;
 
 export const Product = ({ item }) => {
-  const location = useLocation();
-  const idProduct = location.pathname.split("/")[2];
-
-  const [product, setProduct] = useState({})
-
-  useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const res = axios.
-      } catch (err) {
-        
-      }
-    }
-  })
-
   return (
     <Container>
       <Circle />
