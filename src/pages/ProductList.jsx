@@ -67,7 +67,7 @@ const ProductList = () => {
           <FilterText>Filtrar produtos:</FilterText>
           <Select name="color" onChange={handleFilters}>
             <Option defaultValue>Cor</Option>
-            <Option value="white">Branco</Option>
+            <Option value="antiquewhite">Branco</Option>
             <Option value="black">Preto</Option>
             <Option value="gray">Cinza</Option>
             <Option value="red">Vermelho</Option>
