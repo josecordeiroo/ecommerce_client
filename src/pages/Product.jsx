@@ -129,7 +129,6 @@ const Product = () => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get(`/products/find/${productId}`);
-        console.log(res);
         setProduct(res.data);
       } catch (err) {}
     };
@@ -151,19 +150,18 @@ const Product = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Cor</FilterTitle>
-              <FilterColor color="antiquewhite" />
-              <FilterColor color="aquamarine" />
-              <FilterColor color="gray" />
+              {product &&
+                product.color &&
+                product.color.map((c) => <FilterColor color={c} key={c} />)}
             </Filter>
             <Filter>
               <FilterTitle>Tamanho</FilterTitle>
               <FilterSize>
-                <FilterSizeOption>PP</FilterSizeOption>
-                <FilterSizeOption>P</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>G</FilterSizeOption>
-                <FilterSizeOption>GG</FilterSizeOption>
-                <FilterSizeOption>XGG</FilterSizeOption>
+                {product &&
+                  product.size &&
+                  product.size.map((s) => (
+                    <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                  ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
