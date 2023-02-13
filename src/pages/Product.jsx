@@ -124,6 +124,7 @@ const Product = () => {
   const productId = location.pathname.split("/")[2];
 
   const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1)
 
   useEffect(() => {
     const getProduct = async () => {
@@ -167,9 +168,9 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+              <Remove onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)} />
+              <Amount>{quantity}</Amount>
+              <Add onClick={() => setQuantity(quantity + 1)} />
             </AmountContainer>
             <Button>ADICIONAR AO CARRINHO</Button>
           </AddContainer>
