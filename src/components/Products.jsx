@@ -31,6 +31,7 @@ export const Products = ({ category, filters, sort }) => {
   }, [category]);
 
   let filteredProducts = products;
+
   if (category) {
     filteredProducts = products.filter((item) =>
       Object.entries(filters).every(([key, value]) =>
@@ -42,9 +43,9 @@ export const Products = ({ category, filters, sort }) => {
   if (sort === "newest") {
     filteredProducts = [...filteredProducts].sort((a, b) => a.createdAt - b.createdAt);
   } else if (sort === "asc") {
-    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
-  } else if (sort === "desc") {
     filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
+  } else if (sort === "desc") {
+    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
   }
 
   return (
