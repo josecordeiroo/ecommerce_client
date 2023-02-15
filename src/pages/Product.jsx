@@ -138,6 +138,11 @@ const Product = () => {
     getProduct();
   }, [productId]);
 
+  const handleClick = () => {
+    //update cart
+    
+  }
+
   return (
     <Container>
       <Announcement />
@@ -178,7 +183,7 @@ const Product = () => {
               <Amount>{quantity}</Amount>
               <Add onClick={() => setQuantity(quantity + 1)} />
             </AmountContainer>
-            <Button>ADICIONAR AO CARRINHO</Button>
+            <Button onClick={handleClick}>ADICIONAR AO CARRINHO</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
