@@ -85,14 +85,14 @@ const NavBar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Link to="/">
+          <Link style={{textDecoration: "none", color: "black"}} to="/">
           <Logo>ZK.</Logo>
           </Link>
         </Center>
         <Right>
           <MenuItem>Criar conta</MenuItem>
           <MenuItem>Entrar</MenuItem>
-          <Link to="/carrinho">
+          <Link style={{textDecoration: "none", color: "black"}} to="/carrinho">
             <MenuItem>
               <Badge badgeContent={quantity} color="primary">
                 <ShoppingCartOutlined />
