@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
-import { useSelector } from "react-redux"
+import { useSelector } from "react-redux";
 
 import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -71,8 +72,7 @@ const MenuItem = styled.div`
 `;
 
 const NavBar = () => {
-  const quantity = useSelector(state => state.cart.quantity)
-  
+  const quantity = useSelector((state) => state.cart.quantity);
 
   return (
     <Container>
@@ -80,21 +80,25 @@ const NavBar = () => {
         <Left>
           <Language>PT</Language>
           <SearchContainer>
-            <Input placeholder="Pesquisar"/>
+            <Input placeholder="Pesquisar" />
             <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
+          <Link to="/">
           <Logo>ZK.</Logo>
+          </Link>
         </Center>
         <Right>
           <MenuItem>Criar conta</MenuItem>
           <MenuItem>Entrar</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={quantity} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
+          <Link to="/carrinho">
+            <MenuItem>
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuItem>
+          </Link>
         </Right>
       </Wrapper>
     </Container>
