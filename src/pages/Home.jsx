@@ -9,6 +9,7 @@ import Slider from "../components/Slider";
 
 //update
 //update
+//update
 
 const Home = () => {
   return (
