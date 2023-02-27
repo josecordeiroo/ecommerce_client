@@ -200,7 +200,7 @@ const Cart = () => {
                     <Remove />
                   </ProductAmountContainer>
                   <ProductPrice>
-                    R$ {product.price * product.quantity}
+                    R$ {(product.price * product.quantity).toFixed(2)}
                   </ProductPrice>
                 </PriceDetail>
               </Product>
@@ -210,7 +210,7 @@ const Cart = () => {
             <SummaryTitle>Resumo do pedido</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>SubTotal</SummaryItemText>
-              <SummaryItemPrice>R$ 149.80</SummaryItemPrice>
+              <SummaryItemPrice>R$ {cart.total.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Frete estimado</SummaryItemText>
@@ -222,7 +222,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>R$ 149.80</SummaryItemPrice>
+              <SummaryItemPrice>R$ {cart.total.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <Button>FINALIZAR COMPRA</Button>
           </Summary>
