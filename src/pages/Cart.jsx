@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
@@ -7,6 +7,10 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import { Add, Remove } from "@material-ui/icons";
 import { useSelector } from "react-redux";
+
+import StripeCheckout from "react-stripe-checkout";
+
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -160,6 +164,13 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null)
+
+  const onToken = (token) => {
+    setStripeToken(token)
+  }
+
+  console.log("minha key eh " + KEY)
   return (
     <Container>
       <NavBar />
@@ -224,7 +235,19 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>R$ {cart.total.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
-            <Button>FINALIZAR COMPRA</Button>
+            <StripeCheckout
+              name="Zk Clothing"
+              image="https://img.freepik.com/vetores-gratis/cranio-em-stule-vintage_225004-1676.jpg"
+              billingAddress
+              shippingAddress
+              description={`O valor total é de ${cart.total}`}
+              amount={cart.total*100}
+              token={onToken}
+              stripeKey={KEY}
+              data-locale="pt-BR"
+            >
+              <Button>FINALIZAR COMPRA</Button>
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>
