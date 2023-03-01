@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
+//update
+
 import NavBar from "../components/NavBar";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
