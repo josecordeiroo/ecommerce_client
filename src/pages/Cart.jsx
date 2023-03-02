@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+
+import { useNavigate } from "react-router-dom";
 
 import NavBar from "../components/NavBar";
 import Announcement from "../components/Announcement";
@@ -9,6 +11,7 @@ import { Add, Remove } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 
 import StripeCheckout from "react-stripe-checkout";
+import { userRequest } from "../requestMethods";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -164,12 +167,26 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  const [stripeToken, setStripeToken] = useState(null)
+  const [stripeToken, setStripeToken] = useState(null);
+  const history = useNavigate;
 
   const onToken = (token) => {
-    setStripeToken(token)
-  }
-  
+    setStripeToken(token);
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: 500,
+        });
+        history.push("/success", {data: res.data});
+      } catch (err) {}
+    };
+    stripeToken && makeRequest()
+  }, [stripeToken, cart.total, history]);
+
   return (
     <Container>
       <NavBar />
@@ -240,7 +257,7 @@ const Cart = () => {
               billingAddress
               shippingAddress
               description={`O valor total é de ${cart.total}`}
-              amount={cart.total*100}
+              amount={cart.total * 100}
               token={onToken}
               stripeKey={KEY}
               locale="br"
