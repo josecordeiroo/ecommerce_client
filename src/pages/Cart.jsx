@@ -243,7 +243,8 @@ const Cart = () => {
               amount={cart.total*100}
               token={onToken}
               stripeKey={KEY}
-              data-locale="BR"
+              locale="br"
+              currency="BRL"
             >
               <Button>FINALIZAR COMPRA</Button>
             </StripeCheckout>
