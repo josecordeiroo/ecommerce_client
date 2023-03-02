@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
-//update
-
 import NavBar from "../components/NavBar";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -171,8 +169,7 @@ const Cart = () => {
   const onToken = (token) => {
     setStripeToken(token)
   }
-
-  console.log("minha key eh " + KEY)
+  
   return (
     <Container>
       <NavBar />
@@ -246,7 +243,7 @@ const Cart = () => {
               amount={cart.total*100}
               token={onToken}
               stripeKey={KEY}
-              data-locale="pt-BR"
+              data-locale="BR"
             >
               <Button>FINALIZAR COMPRA</Button>
             </StripeCheckout>
