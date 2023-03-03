@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { login } from "../redux/apiCalls";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
@@ -67,15 +69,24 @@ const Footer = styled.div`
 `;
 
 const Login = () => {
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const dispatch = useDispatch()
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    login()
+  }
+
   return (
     <Container>
       <Wrapper>
         <Title>Acessar sua conta</Title>
         <Form>
-          <Input placeholder="Nome de usuário" />
-          <Input placeholder="Senha" />
+          <Input placeholder="Nome de usuário" onChange={(e) => setUsername(e.target.value)}/>
+          <Input placeholder="Senha" onChange={(e) => setPassword(e.target.value)}/>
           <Footer>
-            <Button>Entrar</Button>
+            <Button onClick={handleClick}>Entrar</Button>
             <Link>Não lembra sua senha?</Link>
             <Link>Criar nova conta</Link>
           </Footer>
