@@ -13,6 +13,7 @@ import ProductList from "./pages/ProductList";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Success from "./pages/Success";
 
 const App = () => {
   const user = true;
@@ -21,6 +22,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/confirmado" element={<Success /> } />
           <Route path="/produtos" element={<ProductList />} />
           <Route path="/produtos/:categoria" element={<ProductList />} />
           <Route path="/produto/:id" element={<Product />} />
