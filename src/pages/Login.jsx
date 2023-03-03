@@ -52,7 +52,7 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   margin: 10px 0px;
-  &:disabled{
+  &:disabled {
     background-color: red;
     cursor: not-allowed;
   }
@@ -72,12 +72,16 @@ const Footer = styled.div`
   align-items: center;
 `;
 
+const Error = styled.span`
+  color: red;
+`;
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
-  const {isFetching, error} = useSelector(state => state.user)
+  const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -99,7 +103,10 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Footer>
-            <Button onClick={handleClick} disabled={isFetching}>Entrar</Button>
+            {error && <Error>Algo está errado, tente novamente</Error>}
+            <Button onClick={handleClick} disabled={isFetching}>
+              Entrar
+            </Button>
             <Link>Não lembra sua senha?</Link>
             <Link>Criar nova conta</Link>
           </Footer>
