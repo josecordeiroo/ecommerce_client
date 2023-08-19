@@ -138,7 +138,7 @@ const Summary = styled.div`
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh; //update
+  height: 50vh;
 `;
 
 const SummaryTitle = styled.h1`
